@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 야구 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚾ 숫자 야구 게임</h1>
+            <p class="subtitle">4자리 숫자를 맞춰보세요!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>게임 규칙</h3>
+                    <ul>
+                        <li>0~9 사이의 서로 다른 4자리 숫자를 맞추세요</li>
+                        <li><strong>스트라이크(S)</strong>: 숫자와 위치가 모두 맞음</li>
+                        <li><strong>볼(B)</strong>: 숫자는 맞지만 위치가 틀림</li>
+                        <li><strong>아웃(O)</strong>: 숫자가 전혀 맞지 않음</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="guessInput" maxlength="4" placeholder="4자리 숫자 입력" autocomplete="off">
+                    <button id="submitBtn">확인</button>
+                    <button id="resetBtn">새 게임</button>
+                </div>
+                <div id="errorMsg" class="error-message"></div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-card">
+                    <span class="stat-label">시도 횟수</span>
+                    <span class="stat-value" id="attemptCount">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">최고 기록</span>
+                    <span class="stat-value" id="bestScore">-</span>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>시도 기록</h3>
+                <div id="historyList" class="history-list">
+                    <p class="empty-message">아직 시도한 기록이 없습니다.</p>
+                </div>
+            </div>
+
+            <div id="resultModal" class="modal">
+                <div class="modal-content">
+                    <h2>🎉 정답입니다!</h2>
+                    <p>축하합니다! <span id="finalAttempts"></span>번 만에 맞추셨습니다!</p>
+                    <button id="newGameBtn">새 게임 시작</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
