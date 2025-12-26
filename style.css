@@ -363,6 +363,180 @@ button {
     background: #764ba2;
 }
 
+.scoreboard-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.scoreboard-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.scoreboard-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.scoreboard-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.scoreboard-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scoreboard-item.new-record {
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+    border: 2px solid #ff9800;
+    animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.scoreboard-rank {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #667eea;
+    min-width: 40px;
+    text-align: center;
+}
+
+.scoreboard-rank.top3 {
+    color: #ff6b6b;
+}
+
+.scoreboard-info {
+    flex: 1;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.scoreboard-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.scoreboard-name.anonymous {
+    color: #999;
+    font-style: italic;
+}
+
+.scoreboard-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.scoreboard-score {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    min-width: 60px;
+    text-align: right;
+}
+
+.rank-info {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.name-input-label {
+    margin: 20px 0 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+#playerNameInput {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#playerNameInput:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    flex: 1;
+}
+
+.skip-btn {
+    background: #6c757d !important;
+    color: white;
+}
+
+.skip-btn:hover {
+    background: #5a6268 !important;
+}
+
+#saveScoreBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#saveScoreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 스코어보드 스크롤바 스타일링 */
+.scoreboard-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scoreboard-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.scoreboard-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.scoreboard-list::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 600px) {
     .container {
@@ -382,6 +556,30 @@ button {
     }
 
     .stats-section {
+        flex-direction: column;
+    }
+
+    .scoreboard-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .scoreboard-rank {
+        min-width: auto;
+    }
+
+    .scoreboard-info {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .scoreboard-score {
+        text-align: left;
+        min-width: auto;
+    }
+
+    .modal-buttons {
         flex-direction: column;
     }
 }

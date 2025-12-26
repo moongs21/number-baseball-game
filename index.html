@@ -53,11 +53,33 @@
                 </div>
             </div>
 
+            <div class="scoreboard-section">
+                <h3>🏆 스코어보드 (상위 10위)</h3>
+                <div id="scoreboardList" class="scoreboard-list">
+                    <p class="empty-message">아직 기록이 없습니다.</p>
+                </div>
+            </div>
+
             <div id="resultModal" class="modal">
                 <div class="modal-content">
                     <h2>🎉 정답입니다!</h2>
                     <p>축하합니다! <span id="finalAttempts"></span>번 만에 맞추셨습니다!</p>
+                    <div id="rankInfo" class="rank-info"></div>
                     <button id="newGameBtn">새 게임 시작</button>
+                </div>
+            </div>
+
+            <div id="nameInputModal" class="modal">
+                <div class="modal-content">
+                    <h2>🎊 상위 10위 진입!</h2>
+                    <p>축하합니다! <span id="rankNumber"></span>위에 등록되었습니다!</p>
+                    <p class="name-input-label">이름을 입력해주세요:</p>
+                    <input type="text" id="playerNameInput" maxlength="10" placeholder="이름 (최대 10자)" autocomplete="off">
+                    <div id="nameErrorMsg" class="error-message"></div>
+                    <div class="modal-buttons">
+                        <button id="saveScoreBtn">저장</button>
+                        <button id="skipNameBtn" class="skip-btn">건너뛰기</button>
+                    </div>
                 </div>
             </div>
         </div>
